@@ -1,7 +1,7 @@
 # THE-FACTORS-DETERMINING-COVID-19-VACCINE-ACCEPTANCE
 
 ## Introduction
-This is a group project done by a small number of Moringa School students that aims at analyzing the American public's general opinion on the covid vaccine and whether they will take the vaccine or not. The insights gathered from the project will hopefully assist the government and other health agencies which demographics to target when spreading awareness on the Covid-19 vaccines.
+This is a group project done by a small number of Moringa School students that aims at analyzing the American public's general opinion on the covid vaccine and whether they will take the vaccine or not. The insights gathered from the project will hopefully assist the government and other health agencies on which demographics to target when spreading awareness on the Covid-19 vaccines.
 
 ## Group Members
 - Caleb Muinde
