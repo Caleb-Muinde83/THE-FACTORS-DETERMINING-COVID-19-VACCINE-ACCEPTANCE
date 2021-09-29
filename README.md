@@ -19,20 +19,20 @@ Some research questions to be looked into when undertaking the project include t
 
 **Setup/Installation Requirements**
 
-Text editor-Atom or any text editor that supports python. If you want to interacy with the notebook offline.
-Install Python 3.9.0.
-Google colab for the data preparation and analysis online.
-Required data sets are in the zipped file.
-Download and uzip the zipped folder and exctract the file contents.
-Load and preview data sets.
+1. Text editor-Atom or any text editor that supports python. If you want to interacy with the notebook offline.
+2. Install Python 3.9.0.
+3. Google colab for the data preparation and analysis online.
+4. Required data sets are in the zipped file.
+5. Download and uzip the zipped folder and exctract the file contents.
+6. Load and preview data sets.
 
 **Repository contains**
 
-One datasets
-Colab Python Notebook
-CRISP DM
-Slides containg a summary of the CRISP DM
-Exported Jira excel file
+1. One datasets
+2. Colab Python Notebook
+3. CRISP DM
+4. Slides containg a summary of the CRISP DM
+5. Exported Jira excel file
 
 **Known Bugs**
 
