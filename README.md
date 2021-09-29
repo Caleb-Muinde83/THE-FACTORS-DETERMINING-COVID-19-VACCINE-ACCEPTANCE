@@ -1,14 +1,23 @@
 # THE-FACTORS-DETERMINING-COVID-19-VACCINE-ACCEPTANCE
 
-Preparation and Analysis, 29/09/2021.
+## Introduction
+This is a group project done by a small number of Moringa School students that aims at analyzing the American public's general opinion on the covid vaccine and whether they will take the vaccine or not. The insights gathered from the project will hopefully assist the government and other health agencies which demographics to target when spreading awareness on the Covid-19 vaccines.
 
-By Caleb Muinde, Angela Nyutu, Ian Gathumbi, Barbara Juma, Faith Rotich, Ryan Mburu and Joyline Cheruiyot.
+## Group Members
+- Caleb Muinde
+- Angela Nyutu
+- Ian Gathumbi
+- Barbara Juma
+- Faith Rotich
+- Ryan Mburu 
+- Joyline Cheruiyot
 
-**Problem Statement**
+## Dashboard
+The project was done and displayed on a dashboard, hosted locally by Ngrok : 
 
-Despite vaccines being our best weapon in fighting the Covid-19 pandemic, a lot of people are doubtful about taking the jab. The factors behind vaccine hesitancy are still unclear and this project seeks to investigate them. In the US  184 million people have been fully vaccinated, that’s about 56% of the population. With a large proportion of people not fully vaccinated there could be an emergence of variants that are more infectious or deadly. Moreover, there could be an increase in the number of infections that could lead to a reintroduction of lockdown measures that hurt the economy.
+https://5813-105-163-203-28.ngrok.io/
 
-**Research questions**
+## Analysis Questions
 
 Some research questions to be looked into when undertaking the project include the following : 
 
@@ -17,7 +26,7 @@ Some research questions to be looked into when undertaking the project include t
 3. Does a person’s level of education influence the decision making of vaccine acceptance ?
 4. Does the respondent’s gender in any way correlate with the person’s decision to take the vaccine or not?
 
-**Setup/Installation Requirements**
+## Setup/Installation Requirements**
 
 1. Text editor-Atom or any text editor that supports python. If you want to interacy with the notebook offline.
 2. Install Python 3.9.0.
@@ -26,23 +35,19 @@ Some research questions to be looked into when undertaking the project include t
 5. Download and uzip the zipped folder and exctract the file contents.
 6. Load and preview data sets.
 
-**Repository contains**
+## Repository contains**
 
-1. One datasets
-2. Colab Python Notebook
-3. CRISP DM
-4. Slides containg a summary of the CRISP DM
-5. Exported Jira excel file
+1. Datasets
+2. Colab Python Notebooks
+3. Report
+4. Python scripts on the Dashboard
+5. Website link to the Dashboard
 
-**Known Bugs**
-
-There are no known bugs in the application.
-
-**Technologies Used**
+## Technologies Used
 
 This project was implimeted using python. Python libraries used incluse: Pandas , Numpy, seaborn and Matplotlib .
 
-**Support and contact details**
+## Support and contact details
 
 In case you run into any issues or have querries ,ideas , or concerns, feel free to make a contribution to the code or contact me or any of the other mentioned contributers on Github:Caleb83-Moringa, ... Copyright (c)2021
 
