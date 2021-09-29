@@ -17,7 +17,7 @@ card_country = dbc.Card(
                 html.P('USA')
             ]
         )
-    ]
+    ], color='#DEDEDE',
 )
 
 card_population = dbc.Card(
@@ -28,7 +28,7 @@ card_population = dbc.Card(
                 html.P('328.2 Million')
             ]
         )
-    ]
+    ], color='#DEDEDE',
 )
 
 card_percentage = dbc.Card(
@@ -39,7 +39,7 @@ card_percentage = dbc.Card(
                 html.P('81.9 %')
             ]
         )
-    ]
+    ], color='#DEDEDE',
 )
 
 card_infections= dbc.Card(
@@ -50,7 +50,7 @@ card_infections= dbc.Card(
                 html.P('43.2 M')
             ]
         )
-    ]
+    ], color='#DEDEDE',
 )
 
 card_deaths = dbc.Card(
@@ -61,7 +61,7 @@ card_deaths = dbc.Card(
                 html.P('693 K')
             ]
         )
-    ]
+    ], color='#AC1A1A',
 )
 
 card_states = dbc.Card(
@@ -72,7 +72,7 @@ card_states = dbc.Card(
                 html.P('41 States')
             ]
         )
-    ]
+    ], color='#DEDEDE',
 )
 
 
