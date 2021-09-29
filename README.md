@@ -26,7 +26,7 @@ Some research questions to be looked into when undertaking the project include t
 3. Does a person’s level of education influence the decision making of vaccine acceptance ?
 4. Does the respondent’s gender in any way correlate with the person’s decision to take the vaccine or not?
 
-## Setup/Installation Requirements**
+## Setup/Installation Requirements
 
 1. Text editor-Atom or any text editor that supports python. If you want to interacy with the notebook offline.
 2. Install Python 3.9.0.
@@ -35,7 +35,7 @@ Some research questions to be looked into when undertaking the project include t
 5. Download and uzip the zipped folder and exctract the file contents.
 6. Load and preview data sets.
 
-## Repository contains**
+## Repository contains
 
 1. Datasets
 2. Colab Python Notebooks
