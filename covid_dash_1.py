@@ -2,10 +2,12 @@ import dash
 from dash import html
 from dash import dcc
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 from dash.dependencies import Output, Input
 import dash_bootstrap_components as dbc
+import researchpy as rp
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -33,10 +35,10 @@ card_population = dbc.Card(
 
 card_percentage = dbc.Card(
     [
-        dbc.CardHeader('Pro-Vaxxers percentage: '),
+        dbc.CardHeader('Anti-Vaxxers percentage: '),
         dbc.CardBody(
             [
-                html.P('81.9 %')
+                html.P('18.9 %')
             ]
         )
     ], color='#DEDEDE',
@@ -61,7 +63,7 @@ card_deaths = dbc.Card(
                 html.P('693 K')
             ]
         )
-    ], color='#AC1A1A',
+    ], color='#DEDEDE',
 )
 
 card_states = dbc.Card(
@@ -101,6 +103,21 @@ controls = dbc.Card(
                     id='demographic_dropdown',
                     #set the options after loading dataframe
                     options=[{'label':i, 'value':i} for i in demographic_list],
+                    value='Gender',
+                ),
+            ]
+        )
+    ], body=True
+)
+
+piechart_dropdown = dbc.Card(
+    [
+        html.Div(
+            [
+                dbc.Label('What Demographic of Anti-Vaxxers would you like to see ? : '),
+                dcc.Dropdown(
+                    id='antivax_piechart',
+                    options=[{'label':i, 'value':i} for i in demographic_list],
                     value='Age',
                 ),
             ]
@@ -122,10 +139,16 @@ app.layout = dbc.Container(
         dbc.Row(
             [
                 dbc.Col(controls, md=3, width='auto'),
-                dbc.Col(dcc.Graph(id='bar graphs of demographics'), width='auto')
+                dbc.Col(dcc.Graph(id='bar graphs of demographics'), width='auto'),
+                html.Hr(),         
             ], 
             align='Center',
         ),
+        html.Hr(),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='antivax_piechart'), width=5),
+            dbc.Col(dcc.Graph(id='vaxxers_piechart'), md=5),
+            ])  
     ],
     fluid=True
 )
@@ -135,12 +158,45 @@ app.layout = dbc.Container(
     Input('demographic_dropdown', 'value')
 )
 
-def demographic_plot(column):
-    df1 = df[['Willingness to take vaccine', column]].value_counts().reset_index()
-    df1.rename(columns={0:'Number of Respondents'}, inplace=True)
-    plot = px.bar(df1, x=column, y='Number of Respondents', color='Willingness to take vaccine', barmode='group')
+def bar_percentage(column):
+    df_one = df.groupby([column, 'Willingness to take vaccine']).size().reset_index()
+    df_one['Percentage']=df.groupby([column, 'Willingness to take vaccine']).size().groupby(level=0).apply(lambda x:100 * x/float(x.sum())).values
+    df_one = df_one.drop(0, axis=1)
+    plot = px.bar(df_one, x=column, y='Percentage', color='Willingness to take vaccine', barmode='stack')
     return plot
+
+
+@app.callback(
+    Output('antivax_piechart', 'figure'),
+    Input('demographic_dropdown', 'value')
+)
+
+def bar_pie(column):
+    df_two = df.groupby([column, 'Willingness to take vaccine']).size().reset_index()
+    df_two['Percentage']=df.groupby([column, 'Willingness to take vaccine']).size().groupby(level=0).apply(lambda x:100 * x/float(x.sum())).values
+    df_two = df_two.drop(0, axis=1)
+    df_antivax = df_two[df_two['Willingness to take vaccine'] == 'no']
+    plot = px.pie(df_antivax, values='Percentage', names=column, labels=column, title=f'Percentages of Antivaxxers per {column} ')
+    return plot
+
+
+@app.callback(
+    Output('vaxxers_piechart', 'figure'),
+    Input('demographic_dropdown', 'value')
+)
+
+def bar_pie(column):
+    df_two = df.groupby([column, 'Willingness to take vaccine']).size().reset_index()
+    df_two['Percentage']=df.groupby([column, 'Willingness to take vaccine']).size().groupby(level=0).apply(lambda x:100 * x/float(x.sum())).values
+    df_two = df_two.drop(0, axis=1)
+    df_antivax = df_two[df_two['Willingness to take vaccine'] == 'yes']
+    plot = px.pie(df_antivax, values='Percentage', names=column, labels=column, title=f'Percentages of Pro-Vaxxers per {column} ')
+    return plot
+
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
 
